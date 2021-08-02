@@ -1,0 +1,23 @@
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
+      - name: Test
+        env:
+          DEBUG: electron-builder
+        run: pnpm i

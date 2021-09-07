@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "node postinstall.mjs && electron-builder install-app-deps"
   },
   "dependencies": {
     "better-sqlite3": "^7.4.3"
